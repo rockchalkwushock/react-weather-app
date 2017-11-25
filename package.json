@@ -69,11 +69,11 @@
     "*.js": ["yarn prettier", "git add"]
   },
   "now": {
-    "alias": ["react-weather-app", "react-weather-app-beta"],
+    "alias": ["the-rising-sun", "the-rising-sun-beta"],
     "env": {
       "NODE_ENV": "production"
     },
     "files": ["./build"],
-    "name": "react-weather-app"
+    "name": "the-rising-sun"
   }
 }

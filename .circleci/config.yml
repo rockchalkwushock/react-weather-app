@@ -50,9 +50,9 @@ jobs:
           name: yarn build
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              CI=true PUBLIC_URL=https://react-weather-app.now.sh yarn build
+              CI=true PUBLIC_URL=https://the-rising-sun.now.sh yarn build
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
-              CI=true PUBLIC_URL=https://react-weather-app-beta.now.sh yarn build
+              CI=true PUBLIC_URL=https://the-rising-sun-beta.now.sh yarn build
             else
               echo "This failed miserably!"
             fi
@@ -72,11 +72,11 @@ jobs:
           name: Deploy & Alias.
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              now build -t ${NOW_TOKEN} -n=react-weather-app --static
-              now -t ${NOW_TOKEN} alias react-weather-app.now.sh
+              now build -t ${NOW_TOKEN} -n=the-rising-sun --static
+              now -t ${NOW_TOKEN} alias the-rising-sun.now.sh
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
-              now build -t ${NOW_TOKEN} -n=react-weather-app --static
-              now -t ${NOW_TOKEN} alias react-weather-app-beta.now.sh
+              now build -t ${NOW_TOKEN} -n=the-rising-sun --static
+              now -t ${NOW_TOKEN} alias the-rising-sun-beta.now.sh
             else
               echo "This failed miserably!"
             fi
