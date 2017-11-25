@@ -1,8 +1,15 @@
 import React from 'react'
+import { ApolloProvider } from 'react-apollo'
 import { render } from 'react-dom'
 
 import { App } from './components'
+import { client } from './data'
 import registerServiceWorker from './registerServiceWorker'
 
-render(<App />, document.getElementById('root'))
+render(
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
+  document.getElementById('root')
+)
 registerServiceWorker()
