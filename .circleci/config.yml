@@ -3,11 +3,11 @@ jobs:
   checkout_code:
     docker:
       - image: 'circleci/node:latest'
-    working_directory: ~/react-weather
+    working_directory: ~/react-weather-app
     steps:
       - checkout
       - attach_workspace:
-          at: ~/react-weather
+          at: ~/react-weather-app
       - restore_cache:
           keys:
             - 'yarn-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}'
@@ -23,10 +23,10 @@ jobs:
   test_and_report:
     docker:
       - image: 'circleci/node:latest'
-    working_directory: ~/react-weather
+    working_directory: ~/react-weather-app
     steps:
       - attach_workspace:
-          at: ~/react-weather
+          at: ~/react-weather-app
       - run: yarn install
       - run: CI=true yarn start validate.withCoverage
       - run: yarn start reportCoverage
@@ -41,18 +41,18 @@ jobs:
   build:
     docker:
       - image: 'circleci/node:latest'
-    working_directory: ~/react-weather
+    working_directory: ~/react-weather-app
     steps:
       - attach_workspace:
-          at: ~/react-weather
+          at: ~/react-weather-app
       - run: yarn install
       - run:
           name: yarn build
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              CI=true PUBLIC_URL=https://react-weather.now.sh yarn build
+              CI=true PUBLIC_URL=https://react-weather-app.now.sh yarn build
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
-              CI=true PUBLIC_URL=https://react-weather-beta.now.sh yarn build
+              CI=true PUBLIC_URL=https://react-weather-app-beta.now.sh yarn build
             else
               echo "This failed miserably!"
             fi
@@ -62,21 +62,21 @@ jobs:
   deployment:
     docker:
       - image: 'circleci/node:latest'
-    working_directory: ~/react-weather
+    working_directory: ~/react-weather-app
     steps:
       - attach_workspace:
-          at: ~/react-weather
+          at: ~/react-weather-app
       - run: yarn install
       - run: sudo yarn global add now
       - deploy:
           name: Deploy & Alias.
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              now build -t ${NOW_TOKEN} -n=react-weather --static
-              now -t ${NOW_TOKEN} alias react-weather.now.sh
+              now build -t ${NOW_TOKEN} -n=react-weather-app --static
+              now -t ${NOW_TOKEN} alias react-weather-app.now.sh
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
-              now build -t ${NOW_TOKEN} -n=react-weather --static
-              now -t ${NOW_TOKEN} alias react-weather-beta.now.sh
+              now build -t ${NOW_TOKEN} -n=react-weather-app --static
+              now -t ${NOW_TOKEN} alias react-weather-app-beta.now.sh
             else
               echo "This failed miserably!"
             fi

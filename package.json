@@ -1,12 +1,13 @@
 {
-  "name": "react-weather",
+  "name": "react-weather-app",
   "version": "0.1.0",
   "license": "MIT",
   "description": "Weather Application built with React",
-  "author": "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
-  "repository": "https://github.com/rockchalkwushock/react-weather.git",
-  "homepage": "https://github.com/rockchalkwushock/react-weather#readme",
-  "bugs": "https://github.com/rockchalkwushock/react-weather/issues",
+  "author":
+    "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
+  "repository": "https://github.com/rockchalkwushock/react-weather-app.git",
+  "homepage": "https://github.com/rockchalkwushock/react-weather-app#readme",
+  "bugs": "https://github.com/rockchalkwushock/react-weather-app/issues",
   "scripts": {
     "build": "nps build",
     "cm": "nps commit",
@@ -53,9 +54,7 @@
     }
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/components/App.js"
-    ],
+    "collectCoverageFrom": ["src/components/App.js"],
     "coverageThreshold": {
       "global": {
         "branches": 50,
@@ -64,27 +63,17 @@
         "statements": 50
       }
     },
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "lint-staged": {
-    "*.js": [
-      "yarn prettier",
-      "git add"
-    ]
+    "*.js": ["yarn prettier", "git add"]
   },
   "now": {
-    "alias": [
-      "react-weather",
-      "react-weather-beta"
-    ],
+    "alias": ["react-weather-app", "react-weather-app-beta"],
     "env": {
       "NODE_ENV": "production"
     },
-    "files": [
-      "./build"
-    ],
-    "name": "react-weather"
+    "files": ["./build"],
+    "name": "react-weather-app"
   }
 }

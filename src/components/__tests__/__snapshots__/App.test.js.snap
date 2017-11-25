@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Stupid Test 1. Should render loading state 1`] = `
+exports[`DATA DELIVERY TEST SUITE 1. Should render loading state 1`] = `
 <Component
   data={
     Object {
@@ -37,7 +37,7 @@ exports[`Stupid Test 1. Should render loading state 1`] = `
 </Component>
 `;
 
-exports[`Stupid Test 2. Should render error state 1`] = `
+exports[`DATA DELIVERY TEST SUITE 2. Should render error state 1`] = `
 <Component
   data={
     Object {
@@ -74,7 +74,7 @@ exports[`Stupid Test 2. Should render error state 1`] = `
 </Component>
 `;
 
-exports[`Stupid Test 2. Should render error state 2`] = `
+exports[`DATA DELIVERY TEST SUITE 2. Should render error state 2`] = `
 <Component
   data={
     Object {
