@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { Landing, Layout, Search } from '../components'
-import Weather from './Weather'
+import DataContainer from './DataContainer'
 
 class App extends Component {
   state = {
@@ -18,6 +18,12 @@ class App extends Component {
   }
   handleOnSubmit = e => {
     e.preventDefault()
+    /**
+     * NOTE
+     * Must persist the query to `location`
+     * since resetting `query` will cause graphql
+     * to receive no `variable`.
+     */
     this.setState(state => ({
       ...state,
       location: state.query,
@@ -34,7 +40,7 @@ class App extends Component {
     />
   )
   renderWeather = () => (
-    <Weather reset={this.handleOnClick} userQuery={this.state.location} />
+    <DataContainer reset={this.handleOnClick} userQuery={this.state.location} />
   )
   render() {
     const { submitted } = this.state

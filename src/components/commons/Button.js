@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Buttons = ({ reset, toggle, units }) => (
   <div className="row">
@@ -18,5 +19,11 @@ const Buttons = ({ reset, toggle, units }) => (
     </div>
   </div>
 )
+
+Buttons.PropTypes = {
+  reset: PropTypes.func.isRequired,
+  toggle: PropTypes.func.isRequired,
+  units: PropTypes.string.isRequired
+}
 
 export default Buttons

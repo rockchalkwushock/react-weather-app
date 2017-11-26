@@ -1,25 +1,28 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
+import { Container, Form, Input, Label } from './commons'
 
 const Search = ({ onChange, onSubmit, query }) => (
-  <div className="row">
-    <form className="col s12" onSubmit={onSubmit}>
-      <div className="row">
-        <div className="input-field col s12">
-          <input
-            className="validate"
-            id="search"
-            onChange={onChange}
-            style={{ borderBottomColor: '#ffffff', color: '#ffffff' }}
-            type="text"
-            value={query}
+  <Container className="row">
+    <Form onSubmit={onSubmit}>
+      <Container className="row">
+        <Container className="input-field col s12">
+          <Input onChange={onChange} type="text" value={query} />
+          <Label
+            label="search"
+            text="Search by city name, zip code, or airport code"
           />
-          <label style={{ color: '#ffffff' }} htmlFor="search">
-            Search by city name, zip code, or airport code
-          </label>
-        </div>
-      </div>
-    </form>
-  </div>
+        </Container>
+      </Container>
+    </Form>
+  </Container>
 )
+
+Search.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  query: PropTypes.string.isRequired
+}
 
 export default Search

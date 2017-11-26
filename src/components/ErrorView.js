@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const ErrorView = ({ message, reset }) => (
   <div className="row">
@@ -27,5 +28,10 @@ const ErrorView = ({ message, reset }) => (
     </div>
   </div>
 )
+
+ErrorView.propTypes = {
+  message: PropTypes.string.isRequired,
+  reset: PropTypes.func.isRequired
+}
 
 export default ErrorView

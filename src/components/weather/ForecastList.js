@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import ForecastItem from './ForecastItem'
 
@@ -24,6 +25,12 @@ const ForecastList = ({ display, forecast, units }) => {
       <tbody>{rows}</tbody>
     </table>
   )
+}
+
+ForecastList.propTypes = {
+  display: PropTypes.array.isRequired,
+  forecast: PropTypes.array.isRequired,
+  units: PropTypes.string.isRequired
 }
 
 export default ForecastList

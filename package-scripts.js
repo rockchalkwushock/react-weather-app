@@ -10,8 +10,9 @@ module.exports = {
     default: `react-scripts start`,
     reportCoverage: 'codecov',
     test: {
-      default:
-        'react-scripts test --bail --env=jsdom --runInBand --updateSnapshot',
+      default: series.nps(
+        'react-scripts test --bail --env=jsdom --runInBand --updateSnapshot'
+      ),
       config: series.nps('test --showConfig'),
       coverage: series.nps('test --coverage --silent')
     },
