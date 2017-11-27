@@ -13,8 +13,6 @@
     "cm": "nps commit",
     "dev": "nps dev",
     "eject": "react-scripts eject",
-    "now-build": "react-scripts build",
-    "now-start": "react-scripts start",
     "prettier": "prettier --single-quote --no-semi --write",
     "start": "nps",
     "test": "nps test"
@@ -52,11 +50,16 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && nps validate.withCoverage"
     }
   },
   "jest": {
-    "collectCoverageFrom": ["src/components/App.js"],
+    "collectCoverageFrom": [
+      "src/components/*.js",
+      "!src/containers/index.js",
+      "src/containers/*.js",
+      "src/data/*.js"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 50,

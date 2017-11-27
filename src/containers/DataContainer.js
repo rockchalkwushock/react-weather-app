@@ -5,8 +5,9 @@ import { graphql } from 'react-apollo'
 import { query } from '../data'
 import { ErrorView, LoadingView, Weather } from '../components'
 
-class DataContainer extends Component {
+export class DataContainer extends Component {
   static propTypes = {
+    data: PropTypes.object.isRequired,
     reset: PropTypes.func.isRequired,
     userQuery: PropTypes.string.isRequired
   }

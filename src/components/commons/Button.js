@@ -6,12 +6,14 @@ const Buttons = ({ reset, toggle, units }) => (
     <div className="col s12">
       <a
         className="waves-effect waves-light btn-flat z-depth-4 yellow lighten-3 left"
+        name="toggleUnits"
         onClick={toggle}
       >
         {`Toggle units to: ${units === 'standard' ? 'metric' : 'standard'}`}
       </a>
       <a
         className="waves-effect waves-light btn-flat z-depth-4 yellow lighten-3 right"
+        name="searchAgain"
         onClick={reset}
       >
         Search Again
