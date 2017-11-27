@@ -19,7 +19,7 @@ const ForecastList = ({ display, forecast, units }) => {
           <th>Condition</th>
           <th>Icon</th>
           <th>{`Hi/Lo (${display[0]})`}</th>
-          <th>{`Precipitation (${display[1]})`}</th>
+          <th>{`Precip (${display[1]})`}</th>
         </tr>
       </thead>
       <tbody>{rows}</tbody>

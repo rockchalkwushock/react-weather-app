@@ -7,7 +7,7 @@ const CurrentWeather = ({ display, ...rest }) => (
   <Container className="row">
     <Container className="col s12">
       <Container className="card z-depth-4">
-        <Container className="card-content">
+        <Container className="card-content yellow lighten-3">
           <span className="card-title grey-text text-darken-4">
             {`${rest.city}, ${rest.region}, ${rest.country}`}
           </span>
@@ -19,7 +19,7 @@ const CurrentWeather = ({ display, ...rest }) => (
     </Container>
     <Container className="col s12">
       <Container className="card z-depth-4">
-        <Container className="card-content">
+        <Container className="card-content yellow lighten-3">
           <Icon alt={rest.condition} url={rest.icon} />
           <span className="card-title grey-text text-darken-4">
             {`${rest.temp} ${display[0]}`}

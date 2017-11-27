@@ -9,10 +9,7 @@ const Search = ({ onChange, onSubmit, query }) => (
       <Container className="row">
         <Container className="input-field col s12">
           <Input onChange={onChange} type="text" value={query} />
-          <Label
-            label="search"
-            text="Search by city name, zip code, or airport code"
-          />
+          <Label label="search" text="Search by airport, city, or zip code" />
         </Container>
       </Container>
     </Form>

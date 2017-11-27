@@ -10,16 +10,24 @@ const Footer = ({ year }) => (
   >
     <div className="footer-copyright">
       <Container className="container">
-        <Link
-          direction="left"
-          text="Powered by Apixu"
-          url="https://www.apixu.com/"
-        />
-        <Link
-          direction="right"
-          text={`© ${year === 2017 ? year : `2017 - ${year}`} RCWS Development`}
-          url="https://rcws-development.com"
-        />
+        <Container className="row">
+          <Container className="col s12">
+            <Link
+              direction="left"
+              text="Powered by Apixu"
+              url="https://www.apixu.com/"
+            />
+          </Container>
+          <Container className="col s12">
+            <Link
+              direction="left"
+              text={`© ${
+                year === 2017 ? year : `2017 - ${year}`
+              } RCWS Development`}
+              url="https://rcws-development.com"
+            />
+          </Container>
+        </Container>
       </Container>
     </div>
   </footer>

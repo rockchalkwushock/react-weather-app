@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Landing, Layout, Search } from '../components'
+import { Landing, Layout, Logo, Search } from '../components'
 import DataContainer from './DataContainer'
 
 class App extends Component {
@@ -48,6 +48,7 @@ class App extends Component {
       <Layout>
         {submitted ? this.renderWeather() : this.renderLanding()}
         {submitted ? null : this.renderSearch()}
+        {submitted ? null : <Logo />}
       </Layout>
     )
   }
