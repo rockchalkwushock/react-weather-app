@@ -1,31 +1,49 @@
 import gql from 'graphql-tag'
 
 export const query = gql`
-  query {
-    getWeather(location: "67202") {
+  query getWeather($location: String!) {
+    getWeather(location: $location) {
+      current {
+        base {
+          condition
+          icon
+          windCard
+        }
+        metric {
+          feelsLike
+          precip
+          temp
+          wind
+        }
+        standard {
+          feelsLike
+          precip
+          temp
+          wind
+        }
+      }
+      forecast {
+        base {
+          condition
+          date
+          icon
+        }
+        metric {
+          maxTemp
+          minTemp
+          precip
+        }
+        standard {
+          maxTemp
+          minTemp
+          precip
+        }
+      }
       location {
         city
         country
         currentTime
         region
-      }
-      current {
-        base {
-          cloud
-          code
-          condition
-          humidity
-          icon
-          windCard
-        }
-        standard {
-          feelsLike
-          precip
-          pres
-          temp
-          vis
-          wind
-        }
       }
     }
   }

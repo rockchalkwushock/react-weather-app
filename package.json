@@ -13,8 +13,6 @@
     "cm": "nps commit",
     "dev": "nps dev",
     "eject": "react-scripts eject",
-    "now-build": "react-scripts build",
-    "now-start": "react-scripts start",
     "prettier": "prettier --single-quote --no-semi --write",
     "start": "nps",
     "test": "nps test"
@@ -23,6 +21,8 @@
     "apollo-client-preset": "^1.0.3",
     "graphql": "^0.11.7",
     "graphql-tag": "^2.5.0",
+    "halogenium": "^2.2.2",
+    "prop-types": "^15.6.0",
     "raf": "^3.4.0",
     "react": "^16.1.1",
     "react-apollo": "^2.0.1",
@@ -54,7 +54,12 @@
     }
   },
   "jest": {
-    "collectCoverageFrom": ["src/components/App.js"],
+    "collectCoverageFrom": [
+      "src/components/*.js",
+      "!src/containers/index.js",
+      "src/containers/*.js",
+      "src/data/*.js"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 50,
