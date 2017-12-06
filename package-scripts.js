@@ -4,14 +4,14 @@ const { rimraf, concurrent, series } = npsUtils
 
 module.exports = {
   scripts: {
-    build: 'PUBLIC_URL=https://the-rising-sun.now.sh react-scripts build',
+    build: 'PUBLIC_URL=https://the-rising-sun.now.sh node ./scripts/build',
     clean: series(rimraf('build'), rimraf('coverage')),
     commit: 'git cz',
-    default: `react-scripts start`,
+    default: 'node ./scripts/start',
     reportCoverage: 'codecov',
     test: {
       default:
-        'react-scripts test --bail --env=jsdom --runInBand --updateSnapshot',
+        'node ./scripts/test --bail --env=jsdom --runInBand --updateSnapshot',
       config: series.nps('test --showConfig'),
       coverage: series.nps('test --coverage --silent')
     },

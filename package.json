@@ -1,33 +1,66 @@
 {
   "name": "react-weather-app",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Weather Application built with React",
-  "author":
-    "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
+  "author": "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
   "repository": "https://github.com/rockchalkwushock/react-weather-app.git",
   "homepage": "https://github.com/rockchalkwushock/react-weather-app#readme",
   "bugs": "https://github.com/rockchalkwushock/react-weather-app/issues",
   "scripts": {
     "build": "nps build",
     "cm": "nps commit",
-    "dev": "nps dev",
-    "eject": "react-scripts eject",
     "prettier": "prettier --single-quote --no-semi --write",
     "start": "nps",
     "test": "nps test"
   },
   "dependencies": {
     "apollo-client-preset": "^1.0.3",
+    "autoprefixer": "7.1.6",
+    "babel-core": "6.26.0",
+    "babel-eslint": "7.2.3",
+    "babel-jest": "20.0.3",
+    "babel-loader": "7.1.2",
+    "babel-preset-react-app": "^3.1.0",
+    "babel-runtime": "6.26.0",
+    "case-sensitive-paths-webpack-plugin": "2.1.1",
+    "chalk": "1.1.3",
+    "css-loader": "0.28.7",
+    "dotenv": "4.0.0",
+    "eslint": "4.10.0",
+    "eslint-config-react-app": "^2.0.1",
+    "eslint-loader": "1.9.0",
+    "eslint-plugin-flowtype": "2.39.1",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-react": "7.4.0",
+    "extract-text-webpack-plugin": "3.0.2",
+    "file-loader": "1.1.5",
+    "fs-extra": "3.0.1",
     "graphql": "^0.11.7",
     "graphql-tag": "^2.5.0",
     "halogenium": "^2.2.2",
+    "html-webpack-plugin": "2.29.0",
+    "jest": "20.0.4",
+    "object-assign": "4.1.1",
+    "postcss-flexbugs-fixes": "3.2.0",
+    "postcss-loader": "2.0.8",
+    "preact": "^8.2.6",
+    "preact-compat": "^3.17.0",
+    "promise": "8.0.1",
     "prop-types": "^15.6.0",
-    "raf": "^3.4.0",
+    "raf": "3.4.0",
     "react": "^16.1.1",
     "react-apollo": "^2.0.1",
+    "react-dev-utils": "^4.2.1",
     "react-dom": "^16.1.1",
-    "react-scripts": "1.0.17"
+    "style-loader": "0.19.0",
+    "sw-precache-webpack-plugin": "0.11.4",
+    "url-loader": "0.6.2",
+    "webpack": "3.8.1",
+    "webpack-dev-server": "2.9.4",
+    "webpack-manifest-plugin": "1.3.2",
+    "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
     "codecov": "^3.0.0",
@@ -60,6 +93,36 @@
       "src/containers/*.js",
       "src/data/*.js"
     ],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
+    ],
+    "testEnvironment": "node",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "mjs",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 50,
@@ -68,17 +131,35 @@
         "statements": 50
       }
     },
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "lint-staged": {
-    "*.js": ["yarn prettier", "git add"]
+    "*.js": [
+      "yarn prettier",
+      "git add"
+    ]
   },
   "now": {
-    "alias": ["the-rising-sun", "the-rising-sun-beta"],
+    "alias": [
+      "the-rising-sun",
+      "the-rising-sun-beta"
+    ],
     "env": {
       "NODE_ENV": "production"
     },
-    "files": ["./build"],
+    "files": [
+      "./build"
+    ],
     "name": "the-rising-sun"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   }
 }
