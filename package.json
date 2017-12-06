@@ -1,6 +1,6 @@
 {
   "name": "react-weather-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "description": "Weather Application built with React",
   "author":
@@ -11,7 +11,6 @@
   "scripts": {
     "build": "nps build",
     "cm": "nps commit",
-    "dev": "nps dev",
     "eject": "react-scripts eject",
     "prettier": "prettier --single-quote --no-semi --write",
     "start": "nps",
