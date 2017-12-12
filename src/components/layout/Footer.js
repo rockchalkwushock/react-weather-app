@@ -24,7 +24,7 @@ const Footer = ({ year }) => (
               text={`© ${
                 year === 2017 ? year : `2017 - ${year}`
               } RCWS Development`}
-              url="https://rcws-development.com"
+              url="https://codybrunner.rocks"
             />
           </Container>
         </Container>
