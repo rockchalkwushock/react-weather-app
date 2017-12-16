@@ -1,25 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import rain from '../assets/rain.jpg'
+
 const ErrorView = ({ message, reset }) => (
   <div className="row">
     <div className="col s12">
       <div className="card">
         <div className="card-image">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcSet="https://res.cloudinary.com/rockchalkwushock/c_scale,f_auto,q_auto:eco,w_700/rain.jpg"
-            />
-            <source
-              media="(min-width: 540px)"
-              srcSet="https://res.cloudinary.com/rockchalkwushock/c_scale,f_auto,q_auto:eco,w_425/rain.jpg"
-            />
-            <img
-              alt="rain_404"
-              src="https://res.cloudinary.com/rockchalkwushock/c_scale,f_auto,q_auto:eco,w_320/rain.jpg"
-            />
-          </picture>
+          <img alt="rain_404" className="responsive-img" src={rain} />
           <span className="card-title">
             Oops! Something went wrong, please try again.
           </span>
