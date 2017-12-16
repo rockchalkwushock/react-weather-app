@@ -24,7 +24,7 @@ const Buttons = ({ reset, toggle, units }) => (
   </div>
 )
 
-Buttons.PropTypes = {
+Buttons.propTypes = {
   reset: PropTypes.func.isRequired,
   toggle: PropTypes.func.isRequired,
   units: PropTypes.string.isRequired
