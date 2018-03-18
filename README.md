@@ -58,6 +58,8 @@ yarn dev
 # Frontend
 git clone https://github.com/rockchalkwushock/react-weather-app.git
 cd react-weather-app
+cp .env.example .env
+# Fill in envvars
 yarn start
 ```
 
