@@ -8,7 +8,6 @@
 
 [![NSP Status](https://nodesecurity.io/orgs/rcws-development/projects/693da022-d89a-469f-aad7-cb91cc00c4a4/badge)](https://nodesecurity.io/orgs/rcws-development/projects/693da022-d89a-469f-aad7-cb91cc00c4a4)
 [![Known Vulnerabilities](https://snyk.io/test/github/rockchalkwushock/react-weather-app/badge.svg)](https://snyk.io/test/github/rockchalkwushock/react-weather-app)
-[![Greenkeeper badge](https://badges.greenkeeper.io/rockchalkwushock/react-weather-app.svg)](https://greenkeeper.io/)
 
 [![Commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/rockchalkwushock/react-weather/pulls)
@@ -43,6 +42,26 @@ GraphQL API I designed:
 ![Landscape View](https://github.com/rockchalkwushock/react-weather-app/blob/master/images/landscape.png "Landscape View")
 
 ![Error View](https://github.com/rockchalkwushock/react-weather-app/blob/master/images/error.png "Error View")
+
+## Development
+
+This project is dependant on the backend code that can be found [here](https://github.com/rockchalkwushock/react-weather-api).
+
+```sh
+# Backend
+git clone https://github.com/rockchalkwushock/react-weather-api.git
+cd react-weather-api
+cp .env.example .env
+# Fill in envvars
+yarn dev
+
+# Frontend
+git clone https://github.com/rockchalkwushock/react-weather-app.git
+cd react-weather-app
+cp .env.example .env
+# Fill in envvars
+yarn start
+```
 
 ## Contributors
 

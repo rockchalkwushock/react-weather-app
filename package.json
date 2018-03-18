@@ -3,14 +3,14 @@
   "version": "0.2.0",
   "license": "MIT",
   "description": "Weather Application built with React",
-  "author": "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
+  "author":
+    "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
   "repository": "https://github.com/rockchalkwushock/react-weather-app.git",
   "homepage": "https://github.com/rockchalkwushock/react-weather-app#readme",
   "bugs": "https://github.com/rockchalkwushock/react-weather-app/issues",
   "scripts": {
     "build": "nps build",
     "cm": "nps commit",
-    "prettier": "prettier --single-quote --no-semi --write",
     "start": "nps",
     "test": "nps test"
   },
@@ -93,9 +93,7 @@
       "src/containers/*.js",
       "src/data/*.js"
     ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
+    "setupFiles": ["<rootDir>/config/polyfills.js"],
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
@@ -106,11 +104,10 @@
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)":
+        "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
@@ -131,33 +128,13 @@
         "statements": 50
       }
     },
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "lint-staged": {
-    "*.js": [
-      "yarn prettier",
-      "git add"
-    ]
-  },
-  "now": {
-    "alias": [
-      "the-rising-sun",
-      "the-rising-sun-beta"
-    ],
-    "env": {
-      "NODE_ENV": "production"
-    },
-    "files": [
-      "./build"
-    ],
-    "name": "the-rising-sun"
+    "*.js": ["prettier --single-quote --no-semi --write", "git add"]
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": ["react-app"]
   },
   "eslintConfig": {
     "extends": "react-app"

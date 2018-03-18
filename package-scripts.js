@@ -4,7 +4,7 @@ const { rimraf, concurrent, series } = npsUtils
 
 module.exports = {
   scripts: {
-    build: 'PUBLIC_URL=https://the-rising-sun.now.sh node ./scripts/build',
+    build: 'node ./scripts/build',
     clean: series(rimraf('build'), rimraf('coverage')),
     commit: 'git cz',
     default: 'node ./scripts/start',
