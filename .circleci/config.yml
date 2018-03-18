@@ -27,7 +27,6 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/react-weather-app
-      - run: yarn install
       - run: CI=true yarn start validate.withCoverage
       - run: yarn start reportCoverage
       - store_artifacts:
@@ -45,7 +44,6 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/react-weather-app
-      - run: yarn install
       - run:
           name: yarn build
           command: |
@@ -66,17 +64,20 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/react-weather-app
-      - run: yarn install
       - run: sudo yarn global add now
       - deploy:
           name: Deploy & Alias.
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              now build -t ${NOW_TOKEN} -n=the-rising-sun --static
-              now -t ${NOW_TOKEN} alias the-rising-sun.now.sh
+              url=$(now build -t ${NOW_TOKEN} -n=the-rising-sun --static 2>/dev/null)
+              echo "Site deployed to ${url}."
+              now -t ${NOW_TOKEN} alias $url the-rising-sun.now.sh
+              echo "${url} aliased to https://the-rising-sun.now.sh"
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
-              now build -t ${NOW_TOKEN} -n=the-rising-sun --static
-              now -t ${NOW_TOKEN} alias the-rising-sun-beta.now.sh
+              url=$(now build -t ${NOW_TOKEN} -n=the-rising-sun --static 2>/dev/null)
+              echo "Site deployed to ${url}."
+              now -t ${NOW_TOKEN} alias $url the-rising-sun-beta.now.sh
+              echo "${url} aliased to https://the-rising-sun-beta.now.sh"
             else
               echo "This failed miserably!"
             fi
