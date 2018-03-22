@@ -3,8 +3,7 @@
   "version": "0.2.0",
   "license": "MIT",
   "description": "Weather Application built with React",
-  "author":
-    "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
+  "author": "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
   "repository": "https://github.com/rockchalkwushock/react-weather-app.git",
   "homepage": "https://github.com/rockchalkwushock/react-weather-app#readme",
   "bugs": "https://github.com/rockchalkwushock/react-weather-app/issues",
@@ -27,7 +26,7 @@
     "chalk": "1.1.3",
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
-    "eslint": "4.10.0",
+    "eslint": "4.18.2",
     "eslint-config-react-app": "^2.0.1",
     "eslint-loader": "1.9.0",
     "eslint-plugin-flowtype": "2.39.1",
@@ -93,7 +92,9 @@
       "src/containers/*.js",
       "src/data/*.js"
     ],
-    "setupFiles": ["<rootDir>/config/polyfills.js"],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js"
+    ],
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
@@ -104,10 +105,11 @@
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)":
-        "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
@@ -128,13 +130,20 @@
         "statements": 50
       }
     },
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "lint-staged": {
-    "*.js": ["prettier --single-quote --no-semi --write", "git add"]
+    "*.js": [
+      "prettier --single-quote --no-semi --write",
+      "git add"
+    ]
   },
   "babel": {
-    "presets": ["react-app"]
+    "presets": [
+      "react-app"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
